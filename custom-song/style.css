@@ -403,6 +403,32 @@ background-clip: text;
 
 /*card */
 
+
+.crd-rw{
+  display: flex;
+      row-gap: 10vh;
+      justify-content: center;
+      align-items: center;
+  
+}
+
+.section-title  {
+  padding: 80px;
+}
+
+
+.img_content {
+  display: none;
+}
+
+.pricing_img{
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+
+}
+
 .pricing-card{
   padding: 40px;
   position: relative;
@@ -411,10 +437,11 @@ background-clip: text;
   border-radius: 5px;
   transition: all 0.6s cubic-bezier(0.33, 0.84, 0.31, 0.98);
   transform-style: preserve-3d;
-  display: flex;
+  display: flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 63vh;
 }
 
 
@@ -436,6 +463,66 @@ background-clip: text;
   text-align: center;
   padding-bottom: 40px;
 }
+
+.pricing-card-prm{
+  
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+   
+    border-radius: 5px;
+    transition: all 0.6s cubic-bezier(0.33, 0.84, 0.31, 0.98);
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.premium_1{
+  /* background: red; */
+  position: relative;
+  height: 61vh;
+
+}
+
+.premium_1 h2{
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700px;
+  font-family:"Inter", sans-serif;
+}
+
+
+.premium_1 h5 {
+  font-size: 14px;
+  color: #acacac;
+  border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+  width: 100%;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.premium_1::before{
+content: '';
+height: 115%;
+background-size: 100%;
+width: 100%;
+position: absolute;
+top: -30px;
+left: 0;
+background-image: url("images/price-bg.jpg");
+background-repeat: no-repeat;
+border: 2px solid hsla(0, 0%, 100%, 0.1);
+border-radius: 10px;
+pointer-events: none;
+
+object-fit: cover;
+}
+
+
+
+
+
 
 .price{
   display: flex;
@@ -516,3 +603,11 @@ color: #acacac;
   background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
   color: rgb(4, 4, 38);
 }
+
+
+
+
+
+
+
+
