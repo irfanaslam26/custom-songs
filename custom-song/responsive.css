@@ -1,0 +1,155 @@
+ /* min width style property */
+
+@media screen and (min-width:1480px){
+   
+}
+
+
+
+@media screen and (max-width:1200px){
+   
+      
+}
+
+@media screen and (max-width:1400px){
+   
+      .banner-cntr h5 {
+    font-size: 70px;
+    
+}
+
+.banner-cntr{
+margin-top: 80px;
+}
+}
+
+@media screen and (max-width:1024px){
+ .banner-img { 
+background-size: 1200px;
+    height: 600px;
+}
+
+
+.banner-cntr{
+padding-top: 80px;
+padding-left: 20px;
+}
+.banner-cntr h5{ 
+   font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    nav{
+    display:none;
+    }
+    .hamburger{
+        display: flex;
+       }
+    
+    .rainbow-header {
+        /* border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); */
+        border-bottom: 1px solid hsla(0, 100%, 1%, 0.1);
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        align-items: center;  
+    
+    }
+    .banner-cntr p {
+       
+        width: 85vw;
+    }
+
+}
+
+
+@media screen and (max-width:767px){
+    .logo img { 
+        margin-left: 0px;
+    }
+
+   
+
+}
+
+
+@media screen and (max-width:575px){
+    .logo img{
+        width: 100px;
+
+    }
+}
+
+
+@media screen and (max-width:425px){
+    .header-btn a {
+        color: white;
+        text-decoration: none;
+        height: 40px;
+        line-height: 30px;
+        padding: 0px 20px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;}
+
+
+        .rainbow-header {
+            /* border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); */
+            border-bottom: 1px solid hsla(0, 100%, 1%, 0.1);
+            display: flex;
+            justify-content: space-evenly;
+            padding-bottom: 10px;
+            gap: 10px;
+        }
+
+        .swiper-button-prev  {
+          display: none;
+        } 
+
+
+        swiper-slide img {
+            background-image: url(./images/mobile-banner.jpg);
+          }
+
+          swiper-slide {
+            background-image: url(./images/mobile-banner.jpg);
+          }
+
+          .banner-cntr{
+           padding-left: 0px;
+           padding-top: 0px;
+            }
+
+}
+
+@media screen and (max-width:376px){
+   
+}
+
+@media screen and (max-width:325px){
+    .header-btn a {
+        color: white;
+        text-decoration: none;
+        height: 40px;
+        line-height: 30px;
+        padding: 0px 7px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .banner-cntr h5 {
+        font-size: 30px;
+    }
+    .banner-cntr p {
+        font-size: 22px;
+        line-height: 35px;
+       
+    }
+
+}
