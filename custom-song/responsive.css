@@ -129,6 +129,28 @@ padding-left: 20px;
     bottom: -10px;
     width: 100%;
 }
+
+.pricing_img{
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+  
+  }
+
+  .crd-rw {
+  
+    row-gap: 0vh;
+    
+}
+
+  .footer{
+    padding: 40px 0px 40px 0px;
+}
+.foot-abt{
+    margin-top: 50px;
+}
 }
 
 
@@ -197,6 +219,46 @@ padding-left: 20px;
            padding-top: 0px;
             }
 
+            .section-title {
+                padding: 30px 0px;
+            }
+
+            .footer{
+                padding: 40px 0px 40px 0px;
+            }
+
+            .foot-abt{
+                margin: 20px 0px 0px 0px;
+            }
+
+            .foot-serv {
+             
+                align-items: start;
+                
+            }
+            .foot-serv ul li a{
+             
+               font-size: 12px;
+                
+            }
+            
+
+            .foot-info{
+                overflow: hidden;
+            }
+
+.foot-abt p{
+    font-size: 14px;
+   
+}
+             .foot-info p{
+                overflow: hidden;
+                font-size: 12px;
+            }
+            .footer .col-6{
+                padding: 0px;
+            }
+
 }
 
 @media screen and (max-width:376px){
@@ -220,6 +282,11 @@ padding-left: 20px;
         font-size: 22px;
         line-height: 35px;
        
+    }
+
+    .foot-info p{
+        overflow: hidden;
+        font-size: 10px;
     }
 
 }

@@ -143,7 +143,7 @@ box-shadow: 0 0 20px 5px rgba(251, 83, 67, 0.2);
     background-image: url(./images/banner_img.webp);
     background-size: 100%;
     background-repeat: no-repeat;
-  height: 100vh;
+  height: 94vh;
   }
 
   .banner-cntr{
@@ -395,6 +395,9 @@ background-clip: text;
 
 .sng-title{
   text-decoration: none;
+  color: white;
+  font-size: 38px;
+  font-weight: 600;
 
 }
 
@@ -421,13 +424,7 @@ background-clip: text;
   display: none;
 }
 
-.pricing_img{
-  border: 0;
-  vertical-align: middle;
-  max-width: 100%;
-  height: auto;
 
-}
 
 .pricing-card{
   padding: 40px;
@@ -606,8 +603,171 @@ color: #acacac;
 
 
 
+/* footer */
+
+.footer{
+  padding: 60px;
+  height: 500px;
+  background: rgb(0, 0, 0);
+}
+
+.foot-serv{
+  display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+
+.foot-serv h4{
+  color:#fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+
+}
+
+.foot-serv ul{
+  padding: 0px;
+}
+
+.foot-serv li {
+ list-style: none;
+ margin-top: 15px;
+}
+
+
+.foot-serv li a{
+  font-size: 18px;
+  display: inline-block;
+  color: #acacac;
+  line-height: 25px;
+  transition: 0.3s;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.foot-info{
+  display: flex;
+  justify-content: start;
+ gap: 10px;
+  flex-direction: column;
+}
+
+.foot-info h4{
+  color:#fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.foot-info p{
+  font-size: 18px;
+  line-height: 1.67;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  color: #acacac;
+  font-weight: 400;
+}
+
+
+.foot-abt{
+  margin-left: 65px;
+}
+
+.foot-abt h4{
+  color:#fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.foot-abt p{
+  font-weight: 400;
+  color:#acacac;
+  font-size: 18px;
+  /* padding-right: 31%; */
+  line-height: 28px;
+  margin-bottom: 32px;
+}
+
+.icn{
+display: flex;
+gap: 10px;
+}
+
+.icn-fb, .icn-ist {
+   width: 48px;
+background-color: #1e1e1e ;
+height: 48px;
+line-height: 45px;
+text-align: center;
+display: inline-block;
+border-radius: 100%;
+transition: 0.3s;
+color: white;
+z-index: 2;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.icn-fb:hover{
+background-color:#059dfd ; 
+}
+
+.icn-ist:hover{
+  background-color:#059dfd ; 
+}
+ 
 
 
 
 
 
+
+
+
+
+
+/* bread st */
+
+.theme-gradient{
+  background: linear-gradient(95deg,#059dff 15%, #6549d5 45%, #e33fa1 75%, #e33fa1 100%) 98% / 200% 100%;
+  text-transform: capitalize;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.title{
+  font-size: 36px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}        
+/* bread ed */
+.swpr{
+width: 100%;
+height: 65%;
+}
+.swpr-img{
+text-align: center;
+font-size: 18px;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.swpr-img img{
+display: block;
+width: 100%;
+height: 623px;
+object-fit: cover;
+    }
