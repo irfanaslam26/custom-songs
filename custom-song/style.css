@@ -146,6 +146,20 @@ box-shadow: 0 0 20px 5px rgba(251, 83, 67, 0.2);
   height: 94vh;
   }
 
+  .banner-img2{
+    background-image: url(./images/banner-img2.webp);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  height: 94vh;
+  }
+
+  .banner-img3{
+    background-image: url(./images/banner-img3.webp);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  height: 94vh;
+  }
+
   .banner-cntr{
     display: flex;
     flex-direction: column;
@@ -401,6 +415,14 @@ background-clip: text;
 
 }
 
+.abt-title{
+  text-decoration: none;
+  color: white;
+  font-size: 38px;
+  font-weight: 600;
+
+}
+
 
 
 
@@ -507,7 +529,7 @@ width: 100%;
 position: absolute;
 top: -30px;
 left: 0;
-background-image: url("images/price-bg.jpg");
+background-image: url("images/price-bg.webp");
 background-repeat: no-repeat;
 border: 2px solid hsla(0, 0%, 100%, 0.1);
 border-radius: 10px;
@@ -518,7 +540,9 @@ object-fit: cover;
 
 
 
-
+.audio-controls{
+  display: none;
+}
 
 
 .price{
