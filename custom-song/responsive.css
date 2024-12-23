@@ -21,6 +21,31 @@
 .banner-cntr{
 margin-top: 80px;
 }
+
+.pricing-card{
+           
+    height: 94vh;
+}
+
+.premium_1 {
+    height: 100vh;
+}
+.premium_1::before {
+    content: '';
+    height: 108%;
+    background-size: 70vh;
+    width: 100%;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background-image: url(images/price-bg.webp);
+    background-repeat: no-repeat;
+    border: 2px solid hsla(0, 0%, 100%, 0.1);
+    border-radius: 10px;
+    pointer-events: none;
+    object-fit: cover;
+}
+
 }
 
 @media screen and (max-width:1024px){
@@ -47,7 +72,30 @@ padding-left: 20px;
         .pricing-card-prm button{
             margin-top: 0px !important;
         }
-}
+        .pricing-card {
+            height: 70vh;
+        }
+
+        .premium_1 {
+           
+            height: 70vh;
+        }
+        .premium_1::before {
+           
+            height: 115%;
+            background-size: 52vh;
+           
+            top: -40px;
+           
+        }
+
+        .pricing-card-prm button{
+            margin-top: 40px !important;
+        }
+    }
+    
+       
+
 
 
 @media screen and (max-width:768px){

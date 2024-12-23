@@ -753,7 +753,7 @@ background-color:#059dfd ;
  
 
 
-
+ 
 
 
 
@@ -793,5 +793,5 @@ align-items: center;
 display: block;
 width: 100%;
 height: 623px;
-object-fit: cover;
-    }
+object-fit:cover;
+}
