@@ -1,3 +1,34 @@
+let currentSlide = 0;
+const slides = document.querySelectorAll('.banner-slide');
+const indicators = document.querySelectorAll('.indicator');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    indicators[i].classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+indicators.forEach((indicator, i) => {
+  indicator.addEventListener('click', () => showSlide((currentSlide = i)));
+});
+
+setInterval(nextSlide, 5000);
+showSlide(currentSlide);
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     let currentAudio = null;
     let audioElements = Array.from(document.querySelectorAll('audio'));
@@ -161,18 +192,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-const swiper = document.querySelector('.swpr');
-swiper.breakpoints = {
-  320: {
-    slidesPerView: 1,
-    spaceBetween: 10,
-  },
-  640: {
-    slidesPerView: 2,
-    spaceBetween: 20,
-  },
-  1024: {
-    slidesPerView: 3,
-    spaceBetween: 30,
-  },
-};
+// const swiper = document.querySelector('.swpr');
+// swiper.breakpoints = {
+//   320: {
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//   },
+//   640: {
+//     slidesPerView: 2,
+//     spaceBetween: 20,
+//   },
+//   1024: {
+//     slidesPerView: 3,
+//     spaceBetween: 30,
+//   },
+// };

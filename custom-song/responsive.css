@@ -115,10 +115,17 @@ padding-left: 20px;
         align-items: center;  
     
     }
-    .banner-cntr p {
-       
-        width: 85vw;
-    }
+    .banner-slide {
+        height: 70vh;
+      }
+      .banner-cntr h5 {
+        font-size: 60px;
+      }
+      .banner-cntr p {
+        font-size: 18px;
+        line-height: 30px;
+        width: 70vw;
+      }
 
     .img_button {
         position: absolute;
@@ -221,7 +228,24 @@ padding-left: 20px;
 
     }
 }
+@media (max-width: 480px) {
+    .banner-slide {
+      height: 50vh;
+    }
+    .banner-cntr h5 {
+      font-size: 40px;
+    }
+    .banner-cntr p {
+      font-size: 16px;
+      line-height: 25px;
+      width: 80vw;
+    }
 
+    .carousel-inner .row{
+        display: flex;
+     gap: 20px;
+    }
+  }
 
 @media screen and (max-width:425px){
     .header-btn a {
