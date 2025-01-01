@@ -272,7 +272,7 @@ padding-left: 20px;
           }
         /* swiper-slide  */
         .banner-img {
-            background-image: url('./images/mobile-banner.jpg');
+            background-image: url('./images/mobile-banner.webp');
             background-size: cover;
             overflow: hidden; /* Ensures child elements don’t overflow */
         }
@@ -312,12 +312,12 @@ padding-left: 20px;
         }      
 
         .banner-img2   {
-            background-image: url('./images/mobile-banner2.jpg');
+            background-image: url('./images/mobile-banner2.webp');
             overflow: hidden;
           }
 
         .banner-img3   {
-            background-image: url('/custom-song/images/mobile-banner3.jpg');
+            background-image: url('/custom-song/images/mobile-banner3.webp');
             overflow: hidden;
           }
 
