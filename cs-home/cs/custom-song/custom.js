@@ -191,19 +191,56 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// audio home page
 
-// const swiper = document.querySelector('.swpr');
-// swiper.breakpoints = {
-//   320: {
-//     slidesPerView: 1,
-//     spaceBetween: 10,
-//   },
-//   640: {
-//     slidesPerView: 2,
-//     spaceBetween: 20,
-//   },
-//   1024: {
-//     slidesPerView: 3,
-//     spaceBetween: 30,
-//   },
-// };
+
+document.querySelectorAll('.product-link').forEach(link => {
+    const video = link.querySelector('.hover-video');
+  
+    if (video) { // Check if the video element exists
+      link.addEventListener('mouseenter', () => {
+        video.style.display = 'block';
+        video.play();
+      });
+  
+      link.addEventListener('mouseleave', () => {
+        video.pause();
+        video.style.display = 'none';
+      });
+    } else {
+      console.error('Video element not found in .product-link:', link);
+    }
+  });
+
+
+
+ // Counter about page
+
+     const counters = [
+        { id: "clients", value: 199 },
+        { id: "employees", value: 575 },
+        { id: "programs", value: 69 },
+        { id: "songs", value: 500 }
+    ];
+
+    // Function to animate counters
+    function animateCounter(id, endValue) {
+        let startValue = 0;
+        const duration = 2000; // animation duration in ms
+        const stepTime = Math.abs(Math.floor(duration / endValue));
+        const counterElement = document.getElementById(id);
+
+        const timer = setInterval(() => {
+            startValue += 1;
+            counterElement.textContent = startValue + "+";
+            if (startValue >= endValue) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+
+    // Start animating all counters
+    counters.forEach(counter => {
+        animateCounter(counter.id, counter.value);
+    });
+

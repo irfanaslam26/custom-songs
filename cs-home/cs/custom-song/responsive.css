@@ -9,6 +9,15 @@
       
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+    .row-sec {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+
+
 @media screen and (max-width:1400px){
    
       .banner-cntr h5 {
@@ -91,6 +100,22 @@ padding-left: 20px;
             margin-top: 40px !important;
         }
     }
+
+
+    @media (max-width: 992px) {
+        .service {
+            padding: 20px;
+        }
+
+        .service .title {
+            font-size: 1.25rem;
+        }
+
+        .service .description {
+            font-size: 0.9rem;
+        }
+        }
+
 
 @media screen and (max-width:768px){
     nav{
@@ -206,9 +231,37 @@ padding-left: 20px;
     .logo img { 
         margin-left: 0px;
     }
+    .Our-p-contnr{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .Our_prd_cards .Our_prd_cards-inners .Our_prd_cards-content {
+        padding: 30px 20px;
+    }
+    .rnb-sec-gp {
+        padding: 60px 0 !important;
+    }
 
-   
+    .inner h3{
+        font-size: 24px;
+    }
+    .sh3 h3{
+        font-size: 24px;
+    }
+    .copyright-style-one .ft-menu {
+        justify-content: center;
+    }
+    
 
+}
+
+@media (max-width: 600px) {
+    .counter {
+        font-size: 2rem;
+    }
+    .label {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -216,6 +269,18 @@ padding-left: 20px;
     .logo img{
         width: 100px;
 
+    }
+
+    .service {
+        padding: 15px;
+    }
+
+    .service .icon {
+        font-size: 36px;
+    }
+
+    .service .title {
+        font-size: 1.1rem;
     }
 }
 @media (max-width: 480px) {
@@ -317,7 +382,7 @@ padding-left: 20px;
           }
 
         .banner-img3   {
-            background-image: url('/custom-song/images/mobile-banner3.webp');
+            background-image: url('./images/mobile-banner3.webp');
             overflow: hidden;
           }
 
@@ -326,6 +391,9 @@ padding-left: 20px;
            padding-top: 50px;
            z-index: 5;
            position: relative;
+            }
+            .slider-arrows{
+                display: none;
             }
 
             .section-title {
@@ -369,6 +437,21 @@ padding-left: 20px;
             .footer .col-6{
                 padding: 0px;
             }
+
+
+
+
+            .Our_prd_cards .Our_prd_cards-inners .Our_prd_cards-thumbnail .Our_prd_cards-image img {
+                height: 100px;
+            }            
+            .Our_prd_cards .Our_prd_cards-inners .Our_prd_cards-content .Our_prd_cards-title{
+                font-size: 16px
+            }
+            .Our_prd_cards .Our_prd_cards-inners .Our_prd_cards-content .d-flex{
+                font-size: 16px;
+            }
+
+            
 
 }
 
