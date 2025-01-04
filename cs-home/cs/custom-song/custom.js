@@ -244,3 +244,67 @@ document.querySelectorAll('.product-link').forEach(link => {
         animateCounter(counter.id, counter.value);
     });
 
+
+
+
+    
+ // client scroll home page
+
+
+
+    const container = document.querySelector('.container');
+    const cardGrid = document.querySelector('.card-grid');
+    const cards = document.querySelectorAll('.card');
+    let currentIndex = 0;
+    const cardWidth = cards[0].offsetWidth + 20; // card width + gap
+
+    // Clone the first and last cards
+    function setupInfiniteScroll() {
+        // Clone all cards and append them to create the illusion of infinite scroll
+        const cardsArray = Array.from(cards);
+        cardsArray.forEach(card => {
+            const clone = card.cloneNode(true);
+            cardGrid.appendChild(clone);
+        });
+    }
+
+    setupInfiniteScroll();
+
+    function scrollCards(direction) {
+        const totalCards = cards.length;
+        
+        if (direction === 'right') {
+            currentIndex++;
+            if (currentIndex >= totalCards) {
+                // If we've reached the cloned section, quickly reset to the original position
+                cardGrid.style.transition = 'none';
+                currentIndex = 0;
+                cardGrid.style.transform = `translateX(0)`;
+                // Force reflow
+                cardGrid.offsetHeight;
+                cardGrid.style.transition = 'transform 0.5s ease';
+            }
+        } else {
+            currentIndex--;
+            if (currentIndex < 0) {
+                // If we've reached the beginning, jump to the cloned section
+                currentIndex = totalCards - 1;
+                cardGrid.style.transition = 'none';
+                cardGrid.style.transform = `translateX(-${cardWidth * totalCards}px)`;
+                // Force reflow
+                cardGrid.offsetHeight;
+                cardGrid.style.transition = 'transform 0.5s ease';
+            }
+        }
+
+        // Perform the actual scroll
+        cardGrid.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    // Optional: Add automatic scrolling
+    function autoScroll() {
+        scrollCards('right');
+    }
+
+    // Uncomment the following lines if you want automatic scrolling
+    // setInterval(autoScroll, 3000);

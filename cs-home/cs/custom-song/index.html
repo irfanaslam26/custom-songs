@@ -629,16 +629,16 @@
     </div>
     <!-- bread end -->
 
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
       <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicators -->
+        
           <div class="carousel-indicators indc">
               <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
   
-          <!-- Slides -->
+       
           <div class="carousel-inner">
               <div class="carousel-item active">
                   <div class="row">
@@ -681,7 +681,7 @@
               </div>
           </div>
   
-          <!-- Controls -->
+          
           <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -691,8 +691,147 @@
               <span class="visually-hidden">Next</span>
           </button>
       </div>
-  </div>
+  </div> -->
 
+
+  <div class="container">
+    <button class="scroll-button left" onclick="scrollCards('left')">
+        <svg viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+    </button>
+    
+    <div class="card-grid">
+        <div class="card">
+            <img src="images/Anniversary.webp" alt="Image 1" class="card-image">
+        </div>
+
+        <div class="card">
+            <img src="images/Anniversary.webp" alt="Image 2" class="card-image">
+        </div>
+
+        <div class="card">
+            <img src="images/Anniversary.webp" alt="Image 3" class="card-image">
+        </div>
+
+        <div class="card">
+            <img src="images/Anniversary.webp" alt="Image 4" class="card-image">
+        </div>
+
+        <div class="card">
+            <img src="images/Anniversary.webp" alt="Image 5" class="card-image">
+        </div>
+    </div>
+
+    <button class="scroll-button right" onclick="scrollCards('right')">
+        <svg viewBox="0 0 24 24">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
+    </button>
+</div>
+
+<style>
+  .container {
+      position: relative;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+      overflow: hidden;
+  }
+
+  .card-grid {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      padding: 40px 0;
+  }
+
+  .card {
+      flex-shrink: 0;
+      min-width: 250px;
+      min-height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+  }
+
+  .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      transition: background-color 0.3s;
+  }
+
+  .scroll-button:hover {
+      background-color: rgba(255, 255, 255, 1);
+  }
+
+  .scroll-button.left {
+      left: 40px;
+  }
+
+  .scroll-button.right {
+      right: 15px;
+  }
+
+  .scroll-button svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: #333;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+  }
+
+  @media (max-width: 768px) {
+      .card {
+          min-width: 250px;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .card {
+          min-width: 100%;
+      }
+      
+      .card-image {
+          height: 397px;
+         
+      }
+
+      .container {
+          padding: 0px;
+      }
+
+      .scroll-button {
+          width: 30px;
+          height: 30px;
+      }
+
+      .scroll-button svg {
+          width: 20px;
+          height: 20px;
+      }
+  }
+</style>
 
 
     <!---------new---------->
@@ -727,7 +866,7 @@
             <img src="images/English.webp" alt="English">
             <audio id="audio2" src=""></audio>
           </div>
-          <div class="custom_song_heading">
+          <div class="custom_song_heading"> 
             <p class="sub-title mb--10 text-center mt-2">ENGLISH</p>
           </div>
         </div>
@@ -958,7 +1097,7 @@
 
     <!-- copyright -->
    
-    <!-- <div class="copyright-area copyright-style-one no-border">
+    <div class="copyright-area copyright-style-one no-border">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -978,12 +1117,12 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
    
     <script src="bootstrap.min.css" async defer></script>
 
     <script src="custom.js" async defer></script>
-
+   
  
 </body>
 

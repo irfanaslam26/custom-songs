@@ -18,16 +18,16 @@
 
 
 
-@media screen and (max-width:1400px){
+@media screen and (max-width:1440px){
    
       .banner-cntr h5 {
     font-size: 70px;
     
 }
 
-.banner-cntr{
+/* .banner-cntr{
 margin-top: 80px;
-}
+} */
 
 .pricing-card{
            
