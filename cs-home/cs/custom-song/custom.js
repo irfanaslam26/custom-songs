@@ -214,33 +214,62 @@ document.querySelectorAll('.product-link').forEach(link => {
 
 
 
- // Counter about page
+// Counter data
+const counters = [
+    { id: "clients", value: 199 },
+    { id: "employees", value: 575 },
+    { id: "programs", value: 69 },
+    { id: "songs", value: 500 }
+];
 
-     const counters = [
-        { id: "clients", value: 199 },
-        { id: "employees", value: 575 },
-        { id: "programs", value: 69 },
-        { id: "songs", value: 500 }
-    ];
+// Function to animate a single counter
+function animateCounter(id, endValue) {
+    const counter = document.getElementById(id);
+    let currentValue = 0;
+    
+    // Calculate animation parameters
+    const duration = 2000; // 2 seconds
+    const steps = 50; // Number of steps
+    const stepValue = endValue / steps;
+    const stepTime = duration / steps;
+    
+    // Create animation interval
+    const timer = setInterval(() => {
+        currentValue += stepValue;
+        
+        if (currentValue >= endValue) {
+            counter.textContent = endValue + "+";
+            clearInterval(timer);
+        } else {
+            counter.textContent = Math.floor(currentValue) + "+";
+        }
+    }, stepTime);
+}
 
-    // Function to animate counters
-    function animateCounter(id, endValue) {
-        let startValue = 0;
-        const duration = 2000; // animation duration in ms
-        const stepTime = Math.abs(Math.floor(duration / endValue));
-        const counterElement = document.getElementById(id);
+// Function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
-        const timer = setInterval(() => {
-            startValue += 1;
-            counterElement.textContent = startValue + "+";
-            if (startValue >= endValue) {
-                clearInterval(timer);
-            }
-        }, stepTime);
-    }
-
-    // Start animating all counters
+// Start animation when elements come into view
+function handleScroll() {
     counters.forEach(counter => {
-        animateCounter(counter.id, counter.value);
+        const element = document.getElementById(counter.id);
+        if (isInViewport(element) && !element.classList.contains('animated')) {
+            animateCounter(counter.id, counter.value);
+            element.classList.add('animated');
+        }
     });
+}
 
+// Initialize animations
+document.addEventListener('DOMContentLoaded', () => {
+    handleScroll(); // Check initial state
+    window.addEventListener('scroll', handleScroll); // Add scroll listener
+});
