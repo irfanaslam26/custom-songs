@@ -1,3 +1,5 @@
+// Home page slider
+
 let currentSlide = 0;
 const slides = document.querySelectorAll('.banner-slide');
 const indicators = document.querySelectorAll('.indicator');
@@ -26,6 +28,10 @@ indicators.forEach((indicator, i) => {
 setInterval(nextSlide, 5000);
 showSlide(currentSlide);
 
+
+
+
+// Home page recent songs
 
 
 
@@ -191,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 // audio home page
 
 
@@ -214,7 +221,11 @@ document.querySelectorAll('.product-link').forEach(link => {
 
 
 
-// Counter data
+// Counter data abt page
+
+
+
+
 const counters = [
     { id: "clients", value: 199 },
     { id: "employees", value: 575 },
@@ -222,18 +233,15 @@ const counters = [
     { id: "songs", value: 500 }
 ];
 
-// Function to animate a single counter
 function animateCounter(id, endValue) {
     const counter = document.getElementById(id);
     let currentValue = 0;
     
-    // Calculate animation parameters
     const duration = 2000; // 2 seconds
-    const steps = 50; // Number of steps
+    const steps = 50;
     const stepValue = endValue / steps;
     const stepTime = duration / steps;
     
-    // Create animation interval
     const timer = setInterval(() => {
         currentValue += stepValue;
         
@@ -246,27 +254,25 @@ function animateCounter(id, endValue) {
     }, stepTime);
 }
 
-// Function to check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Start animation when elements come into view
-function handleScroll() {
-    counters.forEach(counter => {
-        const element = document.getElementById(counter.id);
-        if (isInViewport(element) && !element.classList.contains('animated')) {
-            animateCounter(counter.id, counter.value);
-            element.classList.add('animated');
+// Using Intersection Observer for better performance
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            const counterId = entry.target.id;
+            const counterData = counters.find(c => c.id === counterId);
+            if (counterData) {
+                animateCounter(counterId, counterData.value);
+                entry.target.classList.add('animated');
+            }
         }
     });
-}
+}, { threshold: 0.1 });
+
+// Observe all counter elements
+counters.forEach(counter => {
+    const element = document.getElementById(counter.id);
+    if (element) observer.observe(element);
+});
 
 
 

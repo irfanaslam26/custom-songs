@@ -1242,36 +1242,35 @@ p.b1 {
     }    
 
 
-.cntr{
-display: flex;
-justify-content: center;
-margin-top: 30px;
-}
+    .counter-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
 
-.counter-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-}
-.counter-box {
-    padding: 20px;
-    background-color: #121212;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-.counter {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #00aaff;
-}
-.label {
-    margin-top: 5px;
-    font-size: 1rem;
-    color: #fff;
-}
+  .counter-container > div {
+      text-align: center;
+      margin: 1rem;
+      flex: 1;
+      min-width: 200px;
+  }
+
+  .counter {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1db5ec;
+      margin-bottom: 0.5rem;
+  }
+
+  .label {
+      font-size: 1.1rem;
+      color: #edf0f5;
+  }
+
+
 
 
 

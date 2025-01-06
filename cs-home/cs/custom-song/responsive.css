@@ -259,7 +259,10 @@ padding-left: 20px;
     .section-title .abt-crd-title{
         font-size: 28px;
     }
-    
+    .counter-container {
+        flex-direction: row;
+        padding: 0px;
+    }
 
 }
 
