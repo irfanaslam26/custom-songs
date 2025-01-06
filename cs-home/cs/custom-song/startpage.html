@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .subtitle {
+            color: #b759ff;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #b759ff;
+        }
+
+        .phone-input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .country-code {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0 16px;
+            color: white;
+            min-width: 100px;
+        }
+
+        .country-code span {
+            margin-right: 8px;
+        }
+
+        .phone-input {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0 16px;
+        }
+
+        .phone-input input {
+            border: none;
+            background: transparent;
+            color: white;
+            padding: 12px 0;
+            width: 100%;
+        }
+
+        .phone-input input:focus {
+            outline: none;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .toggle {
+            position: relative;
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 34px;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #b759ff;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        
+
+        .submit-btn {
+            display: block;
+            width: 200px;
+            margin: 40px auto 0;
+            padding: 14px 28px;
+            background: linear-gradient(to right, #b759ff, #ff5995);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        select {
+            background: transparent;
+            border: none;
+            color: white;
+            padding-right: 8px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        select option {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .main-title {
+                font-size: 32px;
+            }
+
+            .phone-input-container {
+                flex-direction: column;
+            }
+
+            .country-code {
+                width: 100%;
+            }
+        }
+        .phone-input-container {
+            position: relative;
+        }
+
+        .country-selector {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            bottom: 1px;
+            width: 100px;
+            background: transparent;
+            border: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px 0 0 8px;
+            color: white;
+            cursor: pointer;
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .country-selector:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .country-list {
+            display: none;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 300px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .country-list.show {
+            display: block;
+        }
+
+        .country-search {
+            padding: 8px;
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+        }
+
+        .country-search input {
+            width: 100%;
+            padding: 8px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: white;
+        }
+
+        .country-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .country-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .country-flag {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .country-name {
+            margin-left: 8px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .phone-input {
+            width: 100%;
+            padding: 12px 16px 12px 110px !important;
+        }
+
+        /* Scrollbar styling */
+        .country-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .country-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .country-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+        .sp-rq{
+            background: #1a1a1a;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="subtitle">_A_Custom_Page_</div>
+            <h1 class="main-title">Start Page</h1>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label class="form-label">Presenter Name *</label>
+                <input type="text" class="form-input" placeholder="Name" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email Id *</label>
+                <input type="email" class="form-input" placeholder="Your email-id" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">WhatsApp Number *</label>
+                <div class="phone-input-container">
+                    <div class="country-selector" onclick="toggleCountryList()">
+                        <span class="selected-flag">🇮🇳</span>
+                        <span class="selected-code">+91</span>
+                    </div>
+                    <input type="tel" class="form-input phone-input" placeholder="Enter WhatsApp Number" required>
+                    <div class="country-list">
+                        <div class="country-search">
+                            <input type="text" placeholder="Search country..." onkeyup="filterCountries(this.value)">
+                        </div>
+                        <div id="countryListContent">
+                            <!-- Country options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toggle-container">
+                <span>Any Special Request?</span>
+                <label class="toggle">
+                    <input type="checkbox" id="specialRequestToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div id="detailsContainer" style="display: none; margin-top: 10px;">
+                <div class="sp-rq">
+                    <input type="checkbox" class="special-request" value="800" id="option1">
+                    <label for="option1">Rs. 800 Video making – contains lyrics, photos, videos</label>
+                </div>
+                <div class="sp-rq">
+                    <input type="checkbox" class="special-request" value="1200" id="option2">
+                    <label for="option2">Rs. 1200 - Publish your music in 150+ platforms</label>
+                </div>
+                <div class="sp-rq">
+                    <input type="checkbox" class="special-request" value="2500" id="option3">
+                    <label for="option3">Rs. 2500 for Own Song your Voice</label>
+                </div>
+                <div class="sp-rq">
+                    <input type="checkbox" class="special-request" value="5000" id="option4">
+                    <label for="option4">Rs. 5000 for Own voice recording</label>
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-top: 20px;">
+                <label class="form-label" for="totalAmount">Total amount:</label>
+                <input type="number" class="form-input" id="totalAmount" value="1800" readonly>
+            </div>
+
+            <button type="submit" class="submit-btn">Start Now</button>
+        </form>
+    </div>
+    <script>
+        const toggle = document.getElementById('specialRequestToggle');
+        const detailsContainer = document.getElementById('detailsContainer');
+        const totalAmountInput = document.getElementById('totalAmount');
+        const checkboxes = document.querySelectorAll('.special-request');
+    
+        // Toggle the visibility of the details section
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                detailsContainer.style.display = 'block';
+            } else {
+                detailsContainer.style.display = 'none';
+                totalAmountInput.value = 0; // Reset the total amount
+                checkboxes.forEach(checkbox => checkbox.checked = false); // Uncheck all options
+            }
+        });
+    
+        // Calculate the total amount based on selected requests
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                let total = 0;
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        total += parseInt(cb.value, 10);
+                    }
+                });
+                totalAmountInput.value = total;
+            });
+        });
+    </script>
+    <script>
+        const countries = [
+            { code: 'IN', name: 'India', flag: '🇮🇳', dial: '+91' },
+            { code: 'US', name: 'United States', flag: '🇺🇸', dial: '+1' },
+            { code: 'GB', name: 'United Kingdom', flag: '🇬🇧', dial: '+44' },
+            { code: 'AU', name: 'Australia', flag: '🇦🇺', dial: '+61' },
+            { code: 'CA', name: 'Canada', flag: '🇨🇦', dial: '+1' },
+            { code: 'DE', name: 'Germany', flag: '🇩🇪', dial: '+49' },
+            { code: 'FR', name: 'France', flag: '🇫🇷', dial: '+33' },
+            { code: 'IT', name: 'Italy', flag: '🇮🇹', dial: '+39' },
+            { code: 'JP', name: 'Japan', flag: '🇯🇵', dial: '+81' },
+            { code: 'KR', name: 'South Korea', flag: '🇰🇷', dial: '+82' },
+            { code: 'CN', name: 'China', flag: '🇨🇳', dial: '+86' },
+        ];
+
+        function populateCountryList() {
+            const countryListContent = document.getElementById('countryListContent');
+            countryListContent.innerHTML = countries.map(country => `
+                <div class="country-option" onclick="selectCountry('${country.flag}', '${country.dial}', '${country.name}')">
+                    <span class="country-flag">${country.flag}</span>
+                    <span class="country-dial">${country.dial}</span>
+                    <span class="country-name">${country.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function toggleCountryList() {
+            const countryList = document.querySelector('.country-list');
+            countryList.classList.toggle('show');
+            if (countryList.classList.contains('show')) {
+                populateCountryList();
+            }
+        }
+
+        function selectCountry(flag, dial, name) {
+            const selectedFlag = document.querySelector('.selected-flag');
+            const selectedCode = document.querySelector('.selected-code');
+            selectedFlag.textContent = flag;
+            selectedCode.textContent = dial;
+            toggleCountryList();
+        }
+
+        function filterCountries(searchText) {
+            const filtered = countries.filter(country => 
+                country.name.toLowerCase().includes(searchText.toLowerCase()) ||
+                country.dial.includes(searchText)
+            );
+            
+            const countryListContent = document.getElementById('countryListContent');
+            countryListContent.innerHTML = filtered.map(country => `
+                <div class="country-option" onclick="selectCountry('${country.flag}', '${country.dial}', '${country.name}')">
+                    <span class="country-flag">${country.flag}</span>
+                    <span class="country-dial">${country.dial}</span>
+                    <span class="country-name">${country.name}</span>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('click', (e) => {
+            const countrySelector = document.querySelector('.country-selector');
+            const countryList = document.querySelector('.country-list');
+            if (!countrySelector?.contains(e.target)) {
+                countryList?.classList.remove('show');
+            }
+        });
+
+        populateCountryList();
+    </script>
+
+</body>
+</html>

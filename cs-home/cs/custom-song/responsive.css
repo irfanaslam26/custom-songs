@@ -114,6 +114,9 @@ padding-left: 20px;
         .service .description {
             font-size: 0.9rem;
         }
+        .sh3 h3{
+            font-size: 35px;
+        }
         }
 
 
@@ -164,14 +167,16 @@ padding-left: 20px;
         color: #acacac;
     text-decoration: none;
     outline: none;
-}
-.pricing-card, .premium_1{
-    display: none;
-}
-.img_content {
-    display: block;
-  }
-
+    }
+    .pricing-card, .premium_1{
+        display: none;
+    }
+    .img_content {
+        display: block;
+    }
+    .section-title .abt-crd-title{
+        font-size: 32px;
+    }
 
   .img_button {
     position: absolute;
@@ -250,6 +255,9 @@ padding-left: 20px;
     }
     .copyright-style-one .ft-menu {
         justify-content: center;
+    }
+    .section-title .abt-crd-title{
+        font-size: 28px;
     }
     
 
@@ -412,7 +420,7 @@ padding-left: 20px;
 
             .foot-serv {
              
-                align-items: start;
+                align-items: center;
                 
             }
             .foot-serv ul li a{
@@ -426,10 +434,10 @@ padding-left: 20px;
                 overflow: hidden;
             }
 
-.foot-abt p{
-    font-size: 14px;
-   
-}
+            .foot-abt p{
+                font-size: 14px;
+            
+            }
              .foot-info p{
                 overflow: hidden;
                 font-size: 12px;
