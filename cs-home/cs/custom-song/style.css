@@ -1430,7 +1430,7 @@ figure{
 
 
 
-.crds{
+.blg-crds{
   height: 0%;
 }
 .card.h-100.blog-card {
@@ -1457,13 +1457,13 @@ figure{
   transform: scale(1.05);
 }
 /* Card Body Styling */
-.blog-card .card-body {
+.blog-card .blg-crds-body {
   display: flex;
     flex-wrap: wrap;
     padding: 30px;
     padding-top: 22px;
 }
-.blog-card .card-body .rainbow-list {
+.blog-card .blg-crds-body .rainbow-list {
     font-size: 1.4rem;
     line-height: 2.2rem;
     display: flex;
@@ -1473,13 +1473,13 @@ figure{
     padding: 0;
     margin: 0;
 }
-.blog-card .card-body .rainbow-list li {
+.blog-card .blg-crds-body .rainbow-list li {
     margin-top: 0;
     margin-bottom: 0;
     color: #65676b;
     font-size: 14px;
 }
-.blog-card .card-body .rainbow-list .separator {
+.blog-card .blg-crds-body .rainbow-list .separator {
   margin: 0 0.8rem;
 }
 .blog-card .rainbow-list li a {
@@ -1503,7 +1503,7 @@ a {
   color: #007BFF;
   transition: 0.5s;
 }
-.blog-card .card-body h4 .title { 
+.blog-card .blg-crds-body h4 .title { 
     font-family: "Inter", sans-serif;
     font-weight: 700;
     color: #333; 
@@ -1514,7 +1514,7 @@ a {
     margin-top: 15px;
     flex-basis: 100%;
 }
-.blog-card .card-body h4.title a {
+.blog-card .blg-crds-body h4.title a {
   color: #007BFF;
   padding: 0;
   margin: 0;
