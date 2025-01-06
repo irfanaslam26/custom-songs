@@ -551,11 +551,10 @@ background-clip: text;
 }
 .premium_1::before{
 content: '';
-height: 115%;
+height: 110%;
 background-size: 100%;
 width: 100%;
 position: absolute;
-top: -30px;
 left: 0;
 background-image: url("images/price-bg.webp");
 background-repeat: no-repeat;
@@ -661,7 +660,7 @@ height: 350px;
 .foot-serv{
   display: flex;
       justify-content: start;
-      align-items: center;
+     
       flex-direction: column;
   }
 .foot-serv h4{
