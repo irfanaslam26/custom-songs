@@ -694,7 +694,7 @@
   </div> -->
 
 
-  <div class="container">
+  <div class="container feed">
     <button class="scroll-button left" onclick="scrollCards('left')">
         <svg viewBox="0 0 24 24">
             <path d="M15 18l-6-6 6-6"/>
@@ -702,23 +702,23 @@
     </button>
     
     <div class="card-grid">
-        <div class="card">
+        <div class="feed-card">
             <img src="images/Anniversary.webp" alt="Image 1" class="card-image">
         </div>
 
-        <div class="card">
+        <div class="feed-card">
             <img src="images/Anniversary.webp" alt="Image 2" class="card-image">
         </div>
 
-        <div class="card">
+        <div class="feed-card">
             <img src="images/Anniversary.webp" alt="Image 3" class="card-image">
         </div>
 
-        <div class="card">
+        <div class="feed-card">
             <img src="images/Anniversary.webp" alt="Image 4" class="card-image">
         </div>
 
-        <div class="card">
+        <div class="feed-card">
             <img src="images/Anniversary.webp" alt="Image 5" class="card-image">
         </div>
     </div>
@@ -731,105 +731,14 @@
 </div>
 
 <style>
-  .container {
-      position: relative;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 40px;
-      overflow: hidden;
-  }
-
-  .card-grid {
-      display: flex;
-      gap: 20px;
-      transition: transform 0.5s ease;
-      padding: 40px 0;
-  }
-
-  .card {
-      flex-shrink: 0;
-      min-width: 250px;
-      min-height: 400px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .card-image {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-  }
-
-  .scroll-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      z-index: 10;
-      transition: background-color 0.3s;
-  }
-
-  .scroll-button:hover {
-      background-color: rgba(255, 255, 255, 1);
-  }
-
-  .scroll-button.left {
-      left: 40px;
-  }
-
-  .scroll-button.right {
-      right: 15px;
-  }
-
-  .scroll-button svg {
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: #333;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-  }
+ 
 
   @media (max-width: 768px) {
-      .card {
-          min-width: 250px;
-      }
+     
   }
 
   @media (max-width: 480px) {
-      .card {
-          min-width: 100%;
-      }
-      
-      .card-image {
-          height: 397px;
-         
-      }
-
-      .container {
-          padding: 0px;
-      }
-
-      .scroll-button {
-          width: 30px;
-          height: 30px;
-      }
-
-      .scroll-button svg {
-          width: 20px;
-          height: 20px;
-      }
+  
   }
 </style>
 

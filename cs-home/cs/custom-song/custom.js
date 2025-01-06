@@ -282,9 +282,9 @@ counters.forEach(counter => {
 
 
 
-    const container = document.querySelector('.container');
+    const container = document.querySelector('.feed');
     const cardGrid = document.querySelector('.card-grid');
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.feed-card');
     let currentIndex = 0;
     const cardWidth = cards[0].offsetWidth + 20; // card width + gap
 
