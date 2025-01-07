@@ -1797,15 +1797,19 @@ a {
   }
 
   .stp-contr {
-      max-width: 800px;
+      max-width: 60vw;
       margin: 0 auto;
       padding: 40px 20px;
   }
+  
   .stp-title {
       text-align: center;
       margin-bottom: 40px;
   }
-
+  .stp-title .section-title {
+    padding: 10px;
+    margin-bottom: 0px !important;
+}
   .stp-subtitle {
       color: #b759ff;
       font-size: 14px;
@@ -2101,12 +2105,23 @@ a {
       background: rgba(255, 255, 255, 0.2);
       border-radius: 3px;
   }
+  .special-request{
+    cursor: pointer;
+  }
   .sp-rq{
       background: #1a1a1a;
       padding: 20px 30px;
       border-radius: 8px;
       margin-bottom: 10px;
+      cursor: pointer;
   }
+  .sp-rq.selected {
+    box-shadow: 0 0 4px #fff;
+    transition: all 0.3s ease;
+    background-color: rgb(146, 146, 146);
+    color: white;
+}
+
   /* working process start */
 
   .working-process {
@@ -2127,10 +2142,9 @@ a {
       margin-bottom: 80px;
   }
 
-  .wp-subtitle {
-      color: #b759ff;
-      font-size: 18px;
-      margin-bottom: 20px;
+  .wp-header .section-title {
+    padding: 10px;
+    margin-bottom: 0px !important;
   }
 
   .wp-title {
@@ -2309,6 +2323,7 @@ a {
           color: #ffffff;
           display: block;
           margin-top: 10px;
+          cursor: pointer;
       }
       .form-grp input {
           border: 2px solid hsla(0, 0%, 100%, 0.1);
