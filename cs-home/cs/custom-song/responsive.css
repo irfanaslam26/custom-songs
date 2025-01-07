@@ -1,13 +1,4 @@
- /* min width style property */
 
-@media screen and (min-width:1480px){
-   
-}
-
-@media screen and (max-width:1200px){
-   
-      
-}
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .row-sec {
@@ -98,6 +89,19 @@ padding-left: 20px;
 
         .pricing-card-prm button{
             margin-top: 40px !important;
+        }
+        .wp-steps {
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+  
+        .wp-steps::before {
+            display: none;
+        }
+  
+        .wp-step {
+            width: calc(33.33% - 40px);
         }
     }
 
@@ -233,6 +237,9 @@ padding-left: 20px;
 .foot-abt{
     margin-top: 50px;
 }
+.wp-step {
+    width: calc(50% - 40px);
+}
 }
 
 @media screen and (max-width:767px){
@@ -314,28 +321,8 @@ padding-left: 20px;
         display: flex;
      gap: 20px;
     }
-
-    .feed-card {
-        min-width: 100%;
-    }
-    
-    .card-image {
-        height: 397px;
-       
-    }
-
-    .feed {
-        padding: 0px;
-    }
-
-    .scroll-button {
-        width: 30px;
-        height: 30px;
-    }
-
-    .scroll-button svg {
-        width: 20px;
-        height: 20px;
+    .wp-step {
+        width: 100%;
     }
   }
 
