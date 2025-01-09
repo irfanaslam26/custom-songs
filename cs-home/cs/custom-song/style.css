@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 *
 {
   margin: 0px;
@@ -410,32 +421,100 @@ background-clip: text;
   align-items: center;
 }
 
-.custom_song_audio {
+.custom_song_audio{
   width: 200px;
-}
+  position: relative;
+  }
+
+  .custom_song_audio::before{
+    content: '';
+    background-color: rgb(0, 0, 0);
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    
+    }
+
+    .custom_song_audio:hover::before{
+      height: 100%;
+      width: 100%;
+      transition: 0.3s;
+      pointer-events: none;
+      }
+
+      .custom_song_audio::after {
+        content: '';/* Unicode character for a play icon */
+        font-size: 36px; /* Adjust the size as needed */
+        color: white; /* Adjust the color as needed */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the icon */
+        cursor: pointer;
+        pointer-events: none;
+        }
+
+
+        .custom_song_audio:hover::after{
+          content: '▶';
+          pointer-events: none;
+          }
+
 
 .custom_song_audio img {
-  width: 100%;
-  border-radius: 10px;
+width: 100%;
+cursor: pointer;
+border-radius: 10px;
 }
 
 #displayedImage {
   width: 20px;
 }
 
-.audio-controls{
-  background-color: #000;
-  position:fixed;
+.audio-controls {
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-}
-
-.audio-controls_1{
-  display:flex;
+  display: none; /* Initially hidden */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #000000;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0px -11px 100px -27px rgba(255, 203, 233, 1);
+  }
+  
+  .audio-controls_1{
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-}
+  gap: 10px;
+  }
+  
+  .audio-controls button {
+  background-color: #000000;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #displayedTitle{
+    color: #fff;
+  }
+
+  .custom_song_heading p{
+    font-size: 22px !important;
+  }
 
 .timing_div_1{
   display: flex;
@@ -526,11 +605,10 @@ background-clip: text;
     justify-content: center;
     align-items: center;
 }
-.premium_1{
+.premium_1 {
   /* background: red; */
   position: relative;
-  height: 61vh;
-
+  height: 70vh;
 }
 .premium_1 h2{
   font-size: 28px;
@@ -546,24 +624,21 @@ background-clip: text;
   text-align: center;
   padding-bottom: 40px;
 }
-.premium_1::before{
-content: '';
-height: 110%;
-background-size: 100%;
-width: 100%;
-position: absolute;
-left: 0;
-background-image: url("images/price-bg.webp");
-background-repeat: no-repeat;
-border: 2px solid hsla(0, 0%, 100%, 0.1);
-border-radius: 10px;
-pointer-events: none;
+.premium_1::before {
+  content: '';
+  height: 102%;
+  background-size: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-image: url(images/price-bg.webp);
+  background-repeat: no-repeat;
+  border: 2px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 10px;
+  pointer-events: none;
+  object-fit: cover;
+}
 
-object-fit: cover;
-}
-.audio-controls{
-  display: none;
-}
 .price{
   display: flex;
       gap: 5px;
@@ -721,9 +796,50 @@ height: 350px;
 
 
 
+ /* Modal Styles */
+ .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+max-width: 35%;
+max-height: 75vh;
+object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 
 
 /* footer */
+
 .footer{
   padding: 60px;
   height: 350px;
@@ -1799,7 +1915,7 @@ a {
   .stp-contr {
       max-width: 800px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 20px; 
   }
   .stp-title {
       text-align: center;

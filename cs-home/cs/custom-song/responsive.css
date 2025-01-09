@@ -121,8 +121,14 @@ padding-left: 20px;
         .sh3 h3{
             font-size: 35px;
         }
-        }
 
+        
+        }
+        @media (min-width: 993px) {
+            .side-nav, .overlay {
+              display: none !important;
+            }
+          }
 
 @media screen and (max-width:768px){
     nav{
@@ -143,6 +149,9 @@ padding-left: 20px;
     }
     .banner-slide {
         height: 70vh;
+      }
+      .banner-cntr{
+        margin-top: 80px;
       }
       .banner-cntr h5 {
         font-size: 60px;

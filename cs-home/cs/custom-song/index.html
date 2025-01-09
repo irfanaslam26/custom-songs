@@ -39,6 +39,125 @@
 
   <link rel="preload" as="image" href="images/logo.webp">
   <link rel="preload" as="image" href="images/banner_img.webp">
+  <style>
+    /* Side Navigation */
+ .side-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav.active {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Side Nav Header */
+.side-nav-header {
+  padding: 20px;
+  background: #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.side-nav-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.side-nav-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+.close-btn {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  line-height: 1;
+}
+
+/* Side Nav Content */
+.side-nav-content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav ul li {
+  margin: 15px 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+  border-bottom:0.2px solid #333;
+}
+
+.side-nav.active ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.side-nav ul li:nth-child(1) { transition-delay: 0.1s; }
+.side-nav ul li:nth-child(2) { transition-delay: 0.2s; }
+.side-nav ul li:nth-child(3) { transition-delay: 0.3s; }
+.side-nav ul li:nth-child(4) { transition-delay: 0.4s; }
+.side-nav ul li:nth-child(5) { transition-delay: 0.5s; }
+
+.side-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.side-nav ul li a:hover {
+  color: #059dff;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+    </style>
 </head>
 
 <body>
@@ -84,7 +203,28 @@
         <span class="hamburger-line"></span>
       </div>
 
+<!-- Side Navigation -->
+<div class="side-nav">
+  <div class="side-nav-header">
+    <div class="side-nav-logo">
+      <img src="images/logo.webp" alt="Logo">
+    </div>
+    <button class="close-btn">×</button>
+  </div>
+  
+  <div class="side-nav-content">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="products.html">Our Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
 
+<!-- Overlay -->
+<div class="overlay"></div>
     </header>
 
   </div>
@@ -104,7 +244,7 @@
                   unforgettable melodies, tailored just for you.
                 </p>
                 <div class="button-group">
-                  <a class="btn-default" href="#" tabindex="0">START NOW</a>
+                  <a class="btn-default" href="" tabindex="0">START NOW</a>
                 </div>
               </div>
             </div>
@@ -629,69 +769,7 @@
     </div>
     <!-- bread end -->
 
-    <!-- <div class="container mt-5">
-      <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-        
-          <div class="carousel-indicators indc">
-              <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
   
-       
-          <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <div class="row">
-                      <div class="col-lg-4 col-12">
-                          <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                      <div class="col-lg-4 col-12">
-                        <img src="images/Anniversary.webp" >
-                      </div>
-                  </div>
-              </div>
-          </div>
-  
-          
-          <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-          </button>
-      </div>
-  </div> -->
 
 
   <div class="container feed">
@@ -703,23 +781,23 @@
     
     <div class="card-grid">
         <div class="feed-card">
-            <img src="images/Anniversary.webp" alt="Image 1" class="card-image">
+            <img src="images/Anniversary.webp" alt="Image 1" class="card-image" onclick="openModal(this)">
         </div>
 
         <div class="feed-card">
-            <img src="images/Anniversary.webp" alt="Image 2" class="card-image">
+            <img src="images/Anniversary.webp" alt="Image 2" class="card-image" onclick="openModal(this)">
         </div>
 
         <div class="feed-card">
-            <img src="images/Anniversary.webp" alt="Image 3" class="card-image">
+            <img src="images/Anniversary.webp" alt="Image 3" class="card-image" onclick="openModal(this)">
         </div>
 
         <div class="feed-card">
-            <img src="images/Anniversary.webp" alt="Image 4" class="card-image">
+            <img src="images/Anniversary.webp" alt="Image 4" class="card-image" onclick="openModal(this)">
         </div>
 
         <div class="feed-card">
-            <img src="images/Anniversary.webp" alt="Image 5" class="card-image">
+            <img src="images/Anniversary.webp" alt="Image 5" class="card-image" onclick="openModal(this)">
         </div>
     </div>
 
@@ -730,16 +808,13 @@
     </button>
 </div>
 
-<style>
- 
+<!-- Modal -->
+<div id="imageModal" class="modal" style="display: none;" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
 
-  @media (max-width: 768px) {
-     
-  }
-
-  @media (max-width: 480px) {
-  
-  }
+<style> 
 </style>
 
 
@@ -763,50 +838,50 @@
         <div class="custom_song_content" data-audio-id="audio1">
           <div class="custom_song_audio">
             <img src="images/Tamil.webp" alt="Tamil">
-            <audio id="audio1" src=""></audio>
+            <audio id="audio1" src="audios/kannada.mp3"></audio>
           </div>
           <div class="custom_song_heading">
-            <p class="sub-title mb--10 text-center mt-2">TAMIL</p>
+            <p class="title sub-title mb--10 text-center mt-2">TAMIL</p>
           </div>
         </div>
         <!-- Repeat for other songs with unique data-audio-id and id for audio -->
         <div class="custom_song_content" data-audio-id="audio2">
           <div class="custom_song_audio">
             <img src="images/English.webp" alt="English">
-            <audio id="audio2" src=""></audio>
+            <audio id="audio2" src="audios/english2.mp3"></audio>
           </div>
           <div class="custom_song_heading"> 
-            <p class="sub-title mb--10 text-center mt-2">ENGLISH</p>
+            <p class="title sub-title mb--10 text-center mt-2">ENGLISH</p>
           </div>
         </div>
         <!--  -->
         <div class="custom_song_content" data-audio-id="audio2">
           <div class="custom_song_audio">
             <img src="images/Hindi.webp" alt="Hindi">
-            <audio id="audio2" src=""></audio>
+            <audio id="audio2" src="audios/hindi_music.mp3"></audio>
           </div>
           <div class="custom_song_heading">
-            <p class="sub-title mb--10 text-center mt-2">HINDI</p>
+            <p class="title sub-title mb--10 text-center mt-2">HINDI</p>
           </div>
         </div>
         <!--  -->
         <div class="custom_song_content" data-audio-id="audio2">
           <div class="custom_song_audio">
             <img src="images/Telugu.webp" alt="Telugu">
-            <audio id="audio2" src=""></audio>
+            <audio id="audio2" src="audios/telugu.mp3"></audio>
           </div>
           <div class="custom_song_heading">
-            <p class="sub-title mb--10 text-center mt-2">TELUGU</p>
+            <p class="title sub-title mb--10 text-center mt-2">TELUGU</p>
           </div>
         </div>
         <!--  -->
         <div class="custom_song_content" data-audio-id="audio2">
           <div class="custom_song_audio">
             <img src="images/Malayalam.webp" alt="Malayalam">
-            <audio id="audio2" src=""></audio>
+            <audio id="audio2" src="audios/malayalam.mp3"></audio>
           </div>
           <div class="custom_song_heading">
-            <p class="sub-title mb--10 text-center mt-2">MALAYALAM</p>
+            <p class="title sub-title mb--10 text-center mt-2">MALAYALAM</p>
           </div>
         </div>
 
@@ -820,50 +895,50 @@
           <div class="custom_song_content" data-audio-id="audio1">
             <div class="custom_song_audio">
               <img src="images/Kannada.webp" alt="Kannada">
-              <audio id="audio1" src=""></audio>
+              <audio id="audio1" src="audios/kannada.mp3"></audio>
             </div>
             <div class="custom_song_heading">
-              <p class="sub-title mb--10 text-center mt-2">KANNADA</p>
+              <p class="title sub-title mb--10 text-center mt-2">KANNADA</p>
             </div>
           </div>
           <!-- Repeat for other songs with unique data-audio-id and id for audio -->
           <div class="custom_song_content" data-audio-id="audio2">
             <div class="custom_song_audio">
               <img src="images/Gujarati.webp" alt="Gujarati">
-              <audio id="audio2" src=""></audio>
+              <audio id="audio2" src="audios/gujarati_music.mp3"></audio>
             </div>
             <div class="custom_song_heading">
-              <p class="sub-title mb--10 text-center mt-2">GUJARATI</p>
+              <p class="title sub-title mb--10 text-center mt-2">GUJARATI</p>
             </div>
           </div>
           <!--  -->
           <div class="custom_song_content" data-audio-id="audio3">
             <div class="custom_song_audio">
               <img src="images/Birthday.webp" alt="Birthday">
-              <audio id="audio3" src=""></audio>
+              <audio id="audio3" src="audios/birthday.mp3"></audio>
             </div>
             <div class="custom_song_heading">
-              <p class="sub-title mb--10 text-center mt-2">BIRTHDAY</p>
+              <p class="title sub-title mb--10 text-center mt-2">BIRTHDAY</p>
             </div>
           </div>
           <!--  -->
           <div class="custom_song_content" data-audio-id="audio4">
             <div class="custom_song_audio">
               <img src="images/Anniversary.webp" alt="Anniversary">
-              <audio id="audio4" src=""></audio>
+              <audio id="audio4" src="audios/music_2.mp3"></audio>
             </div>
             <div class="custom_song_heading">
-              <p class="sub-title mb--10 text-center mt-2">ANNIVERSARY</p>
+              <p class="title sub-title mb--10 text-center mt-2">ANNIVERSARY</p>
             </div>
           </div>
           <!--  -->
           <div class="custom_song_content" data-audio-id="audio5">
             <div class="custom_song_audio">
               <img src="images/English2.webp" alt="English">
-              <audio id="audio5" src=""></audio>
+              <audio id="audio5" src="audios/english_music.mp3"></audio>
             </div>
             <div class="custom_song_heading">
-              <p class="sub-title mb--10 text-center mt-2">ENGLISH</p>
+              <p class="title sub-title mb--10 text-center mt-2">ENGLISH</p>
             </div>
           </div>
         </div>
@@ -1004,34 +1079,14 @@
               <div class="col-lg-12 col-md-12 col-12">
                 <div class="copyright-left">
                   <ul class="ft-menu link-hover">
-                    <!-- <li><a href="/privacy_policy">Privacy Policy</a></li>
-                    <li><a href="/refund_policy">Refund Policy</a></li>
-                    <li><a href="/term_condtions">Terms And Condition</a></li>
-                    <li><a href="/contact">Contact Us</a></li> -->
+                 
                     <li><p class="copyright-text" style="padding-left: 30px; font-size: 16px;">Copyright © M7 Corporation 2024</p></li>            
                   </ul>
                 </div>
               </div>
 
 
-              <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="copyright-left">
-                  <ul class="ft-menu link-hover">
-                    <li><a href="/privacy_policy">Privacy Policy</a></li>
-                    <li><a href="/refund_policy">Refund Policy</a></li>
-                    <li><a href="/term_condtions">Terms And Condition</a></li>
-                    <li><a href="/contact">Contact Us</a></li>            
-                  </ul>
-                </div>
-                <div class="copyright-right text-center text-md-right">
-                  <p class="copyright-text">© M7 Corporation 2024</p>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="copyright-right text-center text-md-right">
-                  <p class="copyright-text">Copyright © M7 Corporation 2024</p>
-                </div>
-              </div> -->
+         
             </div>
           </div>
         </div>  
@@ -1047,8 +1102,210 @@
     <script src="bootstrap.min.css" async defer></script>
 
     <script src="custom.js" async defer></script>
+
+    <script>
+      
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let currentAudio = null;
+    let audioElements = Array.from(document.querySelectorAll('audio'));
+    let currentIndex = -1;
+
+    const audioControls = document.getElementById('audio-controls');
+    const playButton = document.getElementById('play-button');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const displayDiv = document.getElementById('displayDiv');
+    const displayedImage = document.getElementById('displayedImage');
+    const displayedTitle = document.getElementById('displayedTitle');
+
+    // Get the timing_div element
+    const timingDiv = document.querySelector('.timing_div');  // to append the time in this div
+    const closeSong = document.querySelector('.close_1');
+
+    // Timing elements
+    const currentTimeDisplay = document.createElement('span');
+    const totalTimeDisplay = document.createElement('span');
+    currentTimeDisplay.classList.add('time-display');
+    totalTimeDisplay.classList.add('time-display');
+    timingDiv.appendChild(currentTimeDisplay); // current time of the song
+    timingDiv.appendChild(document.createTextNode(' / ')); // Separator
+    timingDiv.appendChild(totalTimeDisplay); // total time of the song
+
+    function showControls() {
+        audioControls.style.display = 'flex';
+    }
+
+    function hideControls() {
+        audioControls.style.display = 'none';
+    }
+
+    function updateDisplay(index) {
+        const customSongContent = document.querySelectorAll('.custom_song_content')[index];
+        const img = customSongContent.querySelector('img');
+        const title = customSongContent.querySelector('.custom_song_heading .title').textContent;
+
+        // Update the display div
+        displayedImage.src = img.src;
+        displayedTitle.textContent = title;
+    }
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function updateTiming() {
+        if (currentAudio) {
+            currentTimeDisplay.textContent = formatTime(currentAudio.currentTime);
+            totalTimeDisplay.textContent = formatTime(currentAudio.duration || 0);
+        }
+    }
+
+    function updatePlayPauseIcons() {
+        if (currentAudio && !currentAudio.paused) {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        } else {
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        }
+    }
+
+    function playAudio(index) {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio.removeEventListener('timeupdate', updateTiming);
+            currentAudio.removeEventListener('loadedmetadata', updateTiming);
+            currentAudio.removeEventListener('ended', handleEnded);
+        }
+
+        currentAudio = audioElements[index];
+        currentAudio.play();
+        currentIndex = index;
+
+        updateDisplay(index);
+        showControls();
+        updatePlayPauseIcons();
+
+        currentAudio.addEventListener('timeupdate', updateTiming);
+        currentAudio.addEventListener('loadedmetadata', updateTiming); // Update total duration when metadata is loaded
+        currentAudio.addEventListener('ended', handleEnded); // Handle end of the song
+    }
+
+    function handleEnded() {
+        if (currentIndex < audioElements.length - 1) {
+            currentIndex++;
+            playAudio(currentIndex);
+        } else {
+            closeCurrentAudio(); // Optionally close the player if it's the last song
+        }
+    }
+
+    function closeCurrentAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio.removeEventListener('timeupdate', updateTiming);
+            currentAudio.removeEventListener('loadedmetadata', updateTiming);
+            currentAudio.removeEventListener('ended', handleEnded);
+            currentAudio = null;
+            currentIndex = -1;
+        }
+        hideControls(); // Hide the controls when closing the song
+    }
+
+    document.querySelectorAll('.custom_song_audio img').forEach((img, index) => {
+        img.addEventListener('click', () => {
+            if (currentIndex === index) {
+                // If the clicked image is the one currently playing
+                if (currentAudio) {
+                    currentAudio.currentTime = 0; // Restart the current song
+                    currentAudio.play();
+                    showControls(); // Ensure controls are shown when restarting
+                    updatePlayPauseIcons(); // Ensure icons are updated
+                }
+            } else {
+                playAudio(index);
+            }
+        });
+    });
+
+    playButton.addEventListener('click', () => {
+        if (currentAudio) {
+            if (currentAudio.paused) {
+                currentAudio.play();
+                updatePlayPauseIcons();
+            } else {
+                currentAudio.pause();
+                updatePlayPauseIcons();
+            }
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            playAudio(currentIndex);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < audioElements.length - 1) {
+            currentIndex++;
+            playAudio(currentIndex);
+        }
+    });
+
+    // Event listener to close the song
+    closeSong.addEventListener('click', () => {
+        closeCurrentAudio();
+    });
+});
+
+    </script>
    
- 
+   
+
+
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const sideNav = document.querySelector('.side-nav');
+      const closeBtn = document.querySelector('.close-btn');
+      const overlay = document.querySelector('.overlay');
+      const mainContent = document.querySelector('.main-content');
+    
+      // Open menu
+      hamburger.addEventListener('click', function() {
+        sideNav.classList.add('active');
+        overlay.classList.add('active');
+      });
+    
+      // Close menu function
+      function closeMenu() {
+        sideNav.classList.remove('active');
+        overlay.classList.remove('active');
+      }
+    
+      // Close menu event listeners
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    
+      // Close menu on window resize if screen becomes large
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+          closeMenu();
+        }
+      });
+    });
+    </script>
 </body>
 
 </html>
