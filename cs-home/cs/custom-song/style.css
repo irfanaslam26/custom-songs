@@ -834,7 +834,9 @@ object-fit: contain;
   justify-content: center;
 }
 
-
+.prd-title{
+  padding: 80px;
+}
 
 
 
