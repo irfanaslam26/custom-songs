@@ -728,7 +728,7 @@ height: 350px;
   position: relative;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 40px;
+  /* padding: 0 40px; */
   overflow: hidden;
 }
 
@@ -2192,7 +2192,7 @@ p.b1 {
     /* privacy_policy start */
 
     .privacy-policy{
-      padding: 120px 0 !important;
+      padding: 80px 0 !important;
     }
     .entry-content h2{
       font-weight: 700;
@@ -2235,7 +2235,7 @@ p.b1 {
 
       /* Refund policy start */
       .refund-policy{
-        padding: 120px 0 !important;
+        padding: 80px 0 !important;
     }
     .refund-policy .entry-content h2{
         font-weight: 700;
@@ -2284,36 +2284,36 @@ p.b1 {
       /* Refund-policy end */
 
       /*Terms-Conditions start*/
-      .Terms-Conditions{
-        padding:0 10px !important;
+      .terms-Conditions{
+        padding:80px 10px !important;
       }
-      .Terms-Conditions .entry-content h2{
+      .terms-Conditions .entry-content h2{
           font-weight: 700;
           font-size: 44px;
           font-family: "Inter", sans-serif;
           line-height: 1.23;
           color: #ffffff;
       }
-      .Terms-Conditions .entry-content h3{
+      .terms-Conditions .entry-content h3{
           font-weight: 700;
           font-size: 36px;
           font-family: "Inter", sans-serif;
           line-height: 1.23;
           color: #ffffff;
       }
-      .Terms-Conditions .entry-content p{
+      .terms-Conditions .entry-content p{
           font-size: 16px;
           line-height: 1.7;
           color: #acacac;
           font-weight: 400;
           margin: 0 0 30px;
       }
-      .Terms-Conditions .entry-content ol{
+      .terms-Conditions .entry-content ol{
           margin-bottom: 30px;            
           padding-left: 18px;            
           margin: 0;             
       }
-      .Terms-Conditions .entry-content ol li{
+      .terms-Conditions .entry-content ol li{
           list-style: square;
           font-size: 18px;
           line-height: 1.67;
@@ -2322,10 +2322,10 @@ p.b1 {
           margin-bottom: 20px;
           font-weight: 400;          
       }
-      .Terms-Conditions .entry-content ol li strong{
+      .terms-Conditions .entry-content ol li strong{
           font-weight: bold;
       }
-      .Terms-Conditions .entry-content ul{
+      .terms-Conditions .entry-content ul{
           list-style: square;
           margin-bottom: 30px;
           padding-left: 20px;
@@ -2333,6 +2333,7 @@ p.b1 {
           padding: 0 0 0 40px;
       }
       /* t&C end */
+      
 /* footer */
 
 .footer{
