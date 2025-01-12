@@ -231,7 +231,7 @@ padding-left: 20px;
   
   }
 
-  .crd-rw {
+  .pricing .crd-rw {
   
     row-gap: 0vh;
 }
@@ -245,6 +245,22 @@ padding-left: 20px;
 }
 .foot-abt{
     margin-top: 50px;
+}
+/* start-page */
+.stp-contr {
+    padding: 20px;
+}
+
+.stp-main-title {
+    font-size: 32px;
+}
+
+.phone-input-container {
+    flex-direction: column;
+}
+
+.country-code {
+    width: 100%;
 }
 .wp-step {
     width: calc(50% - 40px);
@@ -262,7 +278,7 @@ padding-left: 20px;
     .Our_prd_cards .Our_prd_cards-inners .Our_prd_cards-content {
         padding: 30px 20px;
     }
-    .rnb-sec-gp {
+    .About-page {
         padding: 60px 0 !important;
     }
 
