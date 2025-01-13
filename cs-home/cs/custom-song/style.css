@@ -57,7 +57,7 @@ nav{
 .nav-menu li a{
     text-decoration: none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
     padding: 0 17px;
     display: block;
     height: 80px;
@@ -364,7 +364,7 @@ box-shadow: 0 0 20px 5px rgba(251, 83, 67, 0.2);
   font-family: "Inter", sans-serif;
   margin: 0px;
 }
-.section-title .subtitle {
+.pricing .section-title .subtitle {
 font-weight: 600;
 letter-spacing: 0.5px;
 line-height: 18px;
@@ -538,6 +538,8 @@ border-radius: 10px;
   font-weight: 600;
 
 }
+
+
 /*card */
 .crd-rw{
   display: flex;
@@ -546,7 +548,7 @@ border-radius: 10px;
       align-items: center;
   
 }
-.section-title  {
+.pricing .section-title  {
   padding: 120px;
   margin-bottom: 0px !important;
 }
@@ -795,43 +797,6 @@ height: 350px;
 }
 
 
- 
-/* bread st */
-/* .theme-gradient{
-  background: linear-gradient(95deg,#059dff 15%, #6549d5 45%, #e33fa1 75%, #e33fa1 100%) 98% / 200% 100%;
-  text-transform: capitalize;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.title{
-  font-size: 36px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  margin-bottom: 20px;
-}         */
-/* bread ed */
-/* .swpr{
-width: 100%;
-height: 65%;
-}
-.swpr-img{
-text-align: center;
-font-size: 18px;
-background: #fff;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.swpr-img img{
-display: block;
-width: 100%;
-height: 623px;
-object-fit:cover;
-}
-.sub-title{
-  color: #fff;
-} */
 /* our product st */
   .Our_prd_sec-title{
     margin-bottom: 50px !important;
@@ -1022,12 +987,7 @@ text-align: center;
 .brd-innr ul.page-list {
   margin: 20px;
 }
-.theme-gradient, .counter-style-1 .count-number {
-  background: linear-gradient(95deg,#059dff 15%, #6549d5 45%, #e33fa1 75%, #e33fa1 100%) 98% / 200% 100%;    text-transform: capitalize;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 .brd-innr ul.page-list {
   margin-top: 16px;
 }

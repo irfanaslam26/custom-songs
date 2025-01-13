@@ -437,16 +437,29 @@ padding-left: 20px;
 
           .banner-cntr{
            padding-left: 0px;
-           padding-top: 50px;
+           padding-top: 120px;
            z-index: 5;
            position: relative;
             }
             .slider-arrows{
                 display: none;
             }
+.pricing .section-title {
+    padding: 60px 0px 30px 0px !important;
+}
 
-            .section-title {
-                padding: 30px 0px;
+.abt-us .section-title{
+    padding: 50px 0px !important;
+    margin: 0px;
+}
+            .prd-title{
+                padding: 80px 0px 30px 0px !important;
+                margin: 0px;
+            }
+            .client-title{
+
+                padding: 80px 0px 30px 0px !important;
+                margin: 0px;
             }
             .product_img {
                 height: 100px;
