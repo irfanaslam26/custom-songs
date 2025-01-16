@@ -2499,3 +2499,39 @@ ul li a {
   padding-left: 30px;
 }
 
+/* 404 PAGE NOT FOUND */
+
+.NOT_FOUND {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.NOT_FOUND .container {
+    text-align: center;
+    max-width: 600px;
+}
+
+.NOT_FOUND .container .emoji {
+    font-size: 8rem;
+    margin-bottom: 20px;
+}
+
+.NOT_FOUND .container .emoji h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.NOT_FOUND .container .emoji p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.NOT_FOUND .container .emoji .page-not-btn {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+}
